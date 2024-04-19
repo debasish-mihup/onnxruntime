@@ -1621,11 +1621,11 @@ def generate_build_tree(
                         "-pipe",
                         "-ggdb3",
                     ]
-                if is_linux() and platform.machine() == "x86_64":
-                    # The following flags needs GCC 8 and newer
-                    cflags += ["-fstack-clash-protection"]
-                    if not args.rv64:
-                        cflags += ["-fcf-protection"]
+                # if is_linux() and platform.machine() == "x86_64":
+                #     # The following flags needs GCC 8 and newer
+                #     cflags += ["-fstack-clash-protection"]
+                #     if not args.rv64:
+                #         cflags += ["-fcf-protection"]
                 cxxflags = cflags.copy()
                 if args.use_cuda:
                     cudaflags = cflags.copy()
